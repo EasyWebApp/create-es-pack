@@ -1,0 +1,7 @@
+!dist/
+docs/
+.editorconfig
+.eslintrc.json
+.esdoc.json
+.travis.yml
+!template/

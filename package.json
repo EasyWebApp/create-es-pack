@@ -1,0 +1,74 @@
+{
+  "name": "create-es-pack",
+  "version": "0.3.0",
+  "description": "Project generator of ECMAScript package",
+  "keywords": [
+    "ecmascript",
+    "package",
+    "project",
+    "generator"
+  ],
+  "author": "shiy2008@gmail.com",
+  "license": "LGPL-3.0",
+  "homepage": "https://web-cell.tk/create-es-pack/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EasyWebApp/create-es-pack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EasyWebApp/create-es-pack/issues"
+  },
+  "bin": "dist/index.js",
+  "module": "source/index.js",
+  "scripts": {
+    "lint": "eslint source/ test/ --fix",
+    "build": "npm run lint  &&  amd-bundle source/index dist/index -m",
+    "debug": "npm run build  &&  mocha --inspect-brk",
+    "test": "npm run build  &&  mocha --exit  &&  esdoc",
+    "prepublishOnly": "npm test",
+    "help": "esdoc  &&  web-server docs/ -p 8000 -o"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@babel/runtime": "^7.2.0",
+    "@tech_query/node-toolkit": "^0.8.2",
+    "commander": "^2.19.0",
+    "cross-spawn": "^6.0.5",
+    "fs-extra": "^7.0.1",
+    "simple-git": "^1.107.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "amd-bundle": "^1.7.4",
+    "esdoc": "^1.1.0",
+    "esdoc-external-nodejs-plugin": "^1.0.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^5.12.0",
+    "husky": "^1.3.1",
+    "koapache": "^1.0.4",
+    "mocha": "^5.2.0",
+    "should": "^13.2.3"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "6.3.0"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ]
+  }
+}
