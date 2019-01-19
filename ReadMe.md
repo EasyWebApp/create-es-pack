@@ -4,6 +4,8 @@ Project generator of ECMAScript package
 
 [![NPM Dependency](https://david-dm.org/EasyWebApp/create-es-pack.svg)](https://david-dm.org/EasyWebApp/create-es-pack)
 
+[![Build Status](https://travis-ci.com/EasyWebApp/create-es-pack.svg?branch=master)](https://travis-ci.com/EasyWebApp/create-es-pack)
+
 [![NPM](https://nodei.co/npm/create-es-pack.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/create-es-pack/)
 
 
