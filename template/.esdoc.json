@@ -12,7 +12,7 @@
                 "test": {
                     "source": "./test",
                     "interfaces": ["describe", "it"],
-                    "includes": ["\\.test\\.js$"]
+                    "includes": ["\\.js$"]
                 }
             }
         }

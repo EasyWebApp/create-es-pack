@@ -4,4 +4,3 @@ docs/
 .eslintrc.json
 .esdoc.json
 .travis.yml
-!template/

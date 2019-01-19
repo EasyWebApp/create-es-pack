@@ -2,11 +2,11 @@
 
 import '@babel/polyfill';
 
-import { creator_meta, setRoot } from './core';
+import { creator_meta } from './core';
 
 import Commander from 'commander';
 
-import { bootGit, spawnSync } from './core';
+import { boot } from './command';
 
 
 const { meta } = creator_meta;
@@ -19,14 +19,14 @@ Commander
         'Git URL of a Remote repository',
         /^(git|https?).+/
     )
+    .option(
+        '-s, --system <name>',  'Compatible operating systems (comma separated)'
+    )
     .parse( process.argv );
 
 
-const cwd = process.argv[2] || process.cwd();
-
-(async () => {
-
-    await setRoot(cwd,  await bootGit(cwd, Commander.remote));
-
-    spawnSync('npm',  ['init', '-y'],  {stdio: 'inherit', cwd});
-})();
+boot(
+    process.argv[2] || process.cwd(),
+    Commander.remote,
+    (Commander.system || '').split(',')
+);

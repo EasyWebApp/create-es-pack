@@ -1,6 +1,6 @@
 {
   "name": "create-es-pack",
-  "version": "0.3.0",
+  "version": "0.4.1",
   "description": "Project generator of ECMAScript package",
   "keywords": [
     "ecmascript",
@@ -19,14 +19,13 @@
     "url": "https://github.com/EasyWebApp/create-es-pack/issues"
   },
   "bin": "dist/index.js",
-  "module": "source/index.js",
   "scripts": {
     "lint": "eslint source/ test/ --fix",
-    "build": "npm run lint  &&  amd-bundle source/index dist/index -m",
+    "build": "npm run lint  &&  babel source/ -d dist/ -s",
     "debug": "npm run build  &&  mocha --inspect-brk",
     "test": "npm run build  &&  mocha --exit  &&  esdoc",
     "prepublishOnly": "npm test",
-    "help": "esdoc  &&  web-server docs/ -p 8000 -o"
+    "help": "esdoc  &&  web-server docs/ -o"
   },
   "husky": {
     "hooks": {
@@ -43,10 +42,11 @@
     "simple-git": "^1.107.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "@babel/register": "^7.0.0",
-    "amd-bundle": "^1.7.4",
     "esdoc": "^1.1.0",
     "esdoc-external-nodejs-plugin": "^1.0.0",
     "esdoc-standard-plugin": "^1.0.0",
