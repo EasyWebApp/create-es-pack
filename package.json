@@ -1,6 +1,6 @@
 {
   "name": "create-es-pack",
-  "version": "0.4.1",
+  "version": "0.4.3",
   "description": "Project generator of ECMAScript package",
   "keywords": [
     "ecmascript",
@@ -20,10 +20,9 @@
   },
   "bin": "dist/index.js",
   "scripts": {
-    "lint": "eslint source/ test/ --fix",
+    "lint": "eslint source/ --fix",
     "build": "npm run lint  &&  babel source/ -d dist/ -s",
-    "debug": "npm run build  &&  mocha --inspect-brk",
-    "test": "npm run build  &&  mocha --exit  &&  esdoc",
+    "test": "npm run build  &&  esdoc",
     "prepublishOnly": "npm test",
     "help": "esdoc  &&  web-server docs/ -o"
   },
@@ -35,9 +34,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "@babel/runtime": "^7.2.0",
-    "@tech_query/node-toolkit": "^0.8.2",
+    "@tech_query/node-toolkit": "^0.9.0",
     "commander": "^2.19.0",
-    "cross-spawn": "^6.0.5",
     "fs-extra": "^7.0.1",
     "simple-git": "^1.107.0"
   },
@@ -52,9 +50,7 @@
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^5.12.0",
     "husky": "^1.3.1",
-    "koapache": "^1.0.4",
-    "mocha": "^5.2.0",
-    "should": "^13.2.3"
+    "koapache": "^1.0.4"
   },
   "babel": {
     "presets": [

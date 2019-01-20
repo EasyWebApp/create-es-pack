@@ -1,4 +1,6 @@
-import { bootGit, setRoot, step, spawn } from './core';
+import { step, spawn } from '@tech_query/node-toolkit';
+
+import { bootGit, setRoot } from './core';
 
 import { join } from 'path';
 

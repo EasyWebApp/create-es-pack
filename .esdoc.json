@@ -9,11 +9,6 @@
                 "accessor": {
                     "access": ["public", "protected"],
                     "autoPrivate": false
-                },
-                "test": {
-                    "source": "./test",
-                    "interfaces": ["describe", "it"],
-                    "includes": ["\\.js$"]
                 }
             }
         },

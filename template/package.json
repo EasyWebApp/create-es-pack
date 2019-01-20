@@ -16,7 +16,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test"
+      "pre-commit": "npm test  &&  git add ."
     }
   },
   "dependencies": {
@@ -39,5 +39,9 @@
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "prettier": {
+    "tabWidth": 4,
+    "singleQuote": true
   }
 }
