@@ -2,18 +2,18 @@
 
 import '@babel/polyfill';
 
-import { creator_meta } from './core';
+import { _meta_ } from './core';
 
 import Commander from 'commander';
 
 import { boot } from './command';
 
 
-const { meta } = creator_meta;
-
-
 Commander
-    .name( meta.name ).version( meta.version ).description( meta.description )
+    .name( _meta_.name )
+    .version( _meta_.version )
+    .description( _meta_.description )
+    .usage('[path] [options]')
     .option(
         '-r, --remote <URL>',
         'Git URL of a Remote repository',
