@@ -4,25 +4,25 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+    - master
 
 pool:
-  vmImage: 'vs2017-win2016'
+    vmImage: 'vs2017-win2016'
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '8.x'
-  displayName: 'Install Node.js'
+    - task: NodeTool@0
+      inputs:
+          versionSpec: '12.x'
+      displayName: 'Install Node.js'
 
-- bash: |
-    npm install
-    npm test
-    cd ${DOC_FOLDER}
-    git init
-    git config user.name ${GIT_USER}
-    git config user.email ${GIT_EMAIL}
-    git add .
-    git commit -m "${GIT_MESSAGE}"
-    git push --force --quiet https://${GIT_TOKEN}@${GIT_URI}.git master:gh-pages
-  displayName: 'npm install & test'
+    - bash: |
+          npm install
+          npm run prepublishOnly
+          cd ${DOC_FOLDER}
+          git init
+          git config user.name ${GIT_USER}
+          git config user.email ${GIT_EMAIL}
+          git add .
+          git commit -m "${GIT_MESSAGE}"
+          git push --force --quiet https://${GIT_TOKEN}@${GIT_URI}.git master:gh-pages
+      displayName: 'npm install & test'
