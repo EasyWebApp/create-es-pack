@@ -8,6 +8,8 @@
         "module": "CommonJS",
         "moduleResolution": "Node",
         "esModuleInterop": true,
+        "jsx": "react",
+        "jsxFactory": "createCommand",
         "lib": ["ES2019", "DOM"]
     },
     "typedocOptions": {

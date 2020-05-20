@@ -75,7 +75,7 @@ export async function copyFrom(
         }
 }
 
-function fixIgnore(name: string, path = '.') {
+export function fixIgnore(name: string, path = '.') {
     const ignore_0 = join(path, `.${name}ignore`),
         ignore_1 = join(path, `${name}ignore`);
 

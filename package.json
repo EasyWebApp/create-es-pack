@@ -1,6 +1,6 @@
 {
     "name": "create-es-pack",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Project generator of ECMAScript package",
     "keywords": [
         "ecmascript",
@@ -29,7 +29,7 @@
         "*.{md,json,yml}": [
             "prettier --write"
         ],
-        "*.ts": [
+        "*.{ts,tsx}": [
             "eslint --fix",
             "prettier --write"
         ]
@@ -48,20 +48,20 @@
     },
     "dependencies": {
         "@tech_query/node-toolkit": "^1.0.3",
-        "commander": "^2.20.0",
+        "commander-jsx": "^0.5.0",
         "fs-extra": "^9.0.0",
-        "simple-git": "^2.4.0"
+        "simple-git": "^2.5.0"
     },
     "devDependencies": {
-        "@types/fs-extra": "^8.1.0",
-        "@typescript-eslint/eslint-plugin": "^2.33.0",
-        "@typescript-eslint/parser": "^2.33.0",
+        "@types/fs-extra": "^8.1.1",
+        "@typescript-eslint/eslint-plugin": "^2.34.0",
+        "@typescript-eslint/parser": "^2.34.0",
         "eslint": "^7.0.0",
         "husky": "^4.2.5",
-        "lint-staged": "^10.2.2",
+        "lint-staged": "^10.2.4",
         "open-cli": "^6.0.1",
         "prettier": "^2.0.5",
-        "typedoc": "^0.17.6",
-        "typescript": "^3.9.2"
+        "typedoc": "^0.17.7",
+        "typescript": "^3.9.3"
     }
 }

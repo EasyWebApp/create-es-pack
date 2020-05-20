@@ -7,7 +7,7 @@ Project generator of ECMAScript package
 
 [![NPM](https://nodei.co/npm/create-es-pack.png?downloads=true&downloadRank=true&stars=true)][3]
 
-## Usage
+## Example
 
 ```Shell
 npm init es-pack path/to/project \
@@ -29,6 +29,24 @@ npm init es-pack path/to/project \
 | API document        | [ESDoc](https://esdoc.org/)                                                     |
 | CI & CD             | [Travis CI](https://travis-ci.com/)                                             |
 |                     | [Azure Pipelines](https://azure.microsoft.com/zh-cn/services/devops/pipelines/) |
+
+## API
+
+### Command-line
+
+    create-es-pack [path] [options]
+
+    Project generator of ECMAScript package
+
+    Options:
+      -h, --help             show Help information
+      -r, --remote   <URL>   Git URL of a Remote repository
+      -s, --system   <name>  Compatible operating systems (comma separated)
+      -v, --version          show Version number
+
+### ES module
+
+https://web-cell.dev/create-es-pack/
 
 ## Down-stream creator
 
